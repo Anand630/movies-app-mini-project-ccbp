@@ -1,0 +1,28 @@
+.login-nav-bar {
+  padding: 30px 5%;
+}
+
+@media (max-width: 767px) {
+  .login-nav-bar {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+  }
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.movies-logo {
+  width: 180px;
+  height: 52px;
+}
+
+@media (max-width: 767px) {
+  .movies-logo {
+    width: 100px;
+    height: 27px;
+  }
+}

@@ -1,0 +1,195 @@
+.login-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://res.cloudinary.com/dlygjzdo7/image/upload/v1672990972/Netflix%20Clone%20App/Login/login_page_lg_bg_x0u98q.png');
+  background-size: cover;
+  /* background-position: center; */
+}
+
+@media (max-width: 767px) {
+  .login-page-container {
+    background-image: none;
+    background-color: #000000;
+
+    /* background-position: center; */
+  }
+}
+
+@media (min-width: 768px) {
+  .login-page-bottom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .login-page-bottom-container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .login-page-bottom-container {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+  }
+}
+
+.login-form {
+  /* background-color: #0c0b10; */
+  background-color: #00000099;
+
+  width: 456px;
+  min-height: 420px;
+
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .login-form {
+    /* background-color: #0c0b10; */
+    background-color: transparent;
+    /* border: 1px solid red; */
+
+    width: 100%;
+    min-height: 420px;
+  }
+}
+
+.login-heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  color: #ffffff;
+  font-family: Roboto;
+  width: 80%;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .login-heading {
+    text-align: start;
+  }
+}
+
+.label-input-container {
+  width: 80%;
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.credential-label {
+  color: #ffffff;
+  font-weight: 400;
+  font-family: Roboto;
+  font-size: 14px;
+  margin-bottom: 9px;
+  letter-spacing: 0.05em;
+}
+
+.credential-input {
+  height: 40px;
+  width: 100%;
+
+  padding-left: 15px;
+  outline: none;
+  border: none;
+  background: #333333;
+  border-radius: 2px;
+  color: #f8fafc90;
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #f8fafc98;
+  font-size: 14px;
+}
+
+.login-error-message {
+  width: 80%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #dc2626;
+}
+
+.login-button {
+  width: 80%;
+  margin-top: 15px;
+  font-family: Roboto;
+  background: #e50914;
+  border-radius: 8px;
+  color: #ffffff;
+  margin-top: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #f8fafc;
+  padding: 8px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.sign-in-button {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .login-button {
+    display: none;
+  }
+  .sign-in-button {
+    display: block;
+    width: 80%;
+
+    font-family: Roboto;
+    background: #e50914;
+    border-radius: 4px;
+    color: #ffffff;
+    margin-top: 45px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: #f8fafc;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 575px) {
+  .login-heading {
+    width: 100%;
+  }
+  .label-input-container {
+    width: 100%;
+  }
+  .login-error-message {
+    width: 100%;
+  }
+  .sign-in-button {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
