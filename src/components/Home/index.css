@@ -3,11 +3,83 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.home-page-top-container {
+  background-image: url('https://res.cloudinary.com/dlygjzdo7/image/upload/v1673094235/Netflix%20Clone%20App/Home/home_top_bg-image_lg_q34eq6.png');
+  background-size: cover;
+  background-position: center;
+  background-color: #000000;
+  height: 605px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-container-middle-text-container {
+  padding-left: 7.5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.superman-heading {
+  font-family: Roboto;
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 62px;
+  color: #ffffff;
+}
+
+.superman-description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  width: 400px;
+
+  color: #ffffff;
+}
+
+.play-button {
+  width: 72px;
+  height: 40px;
+
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.top-container-bottom-blur-container {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(24, 24, 24, 0.546875) 38.26%,
+    #181818 92.82%,
+    #181818 98.68%,
+    #181818 108.61%
+  );
+  color: transparent;
+  height: 162px;
+}
+
+.home-page-bottom-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
+  padding: 15px 7.5%;
 }
 
 h1 {
   color: aliceblue;
   font-family: Roboto;
+  text-align: center;
 }

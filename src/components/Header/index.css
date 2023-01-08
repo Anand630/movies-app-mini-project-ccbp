@@ -1,0 +1,64 @@
+.header-nav-bar {
+  padding: 20px 7.5%;
+
+  background-color: rgba(19, 19, 19, 0.2);
+}
+
+.nav-items-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-movies-logo {
+  width: 135px;
+  height: 39px;
+  margin-right: 80px;
+}
+
+.menu-options-and-search-avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-options-container {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-option {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  color: #ffffff;
+  margin-right: 30px;
+}
+
+.search-avatar-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  color: #ffffff;
+  width: 22px;
+  height: 22px;
+}
+
+.profile-container {
+  background-color: #ffffff;
+  border-radius: 50%;
+  height: 48px;
+  width: 47px;
+  margin-left: 30px;
+}
+
+.header-avatar {
+  width: 48px;
+  height: 48px;
+}

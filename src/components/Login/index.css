@@ -45,7 +45,8 @@
 
 .login-form {
   /* background-color: #0c0b10; */
-  background-color: #00000099;
+  /* background-color: #00000099; */
+  background-color: rgba(12, 11, 16, 0.8);
 
   width: 456px;
   min-height: 420px;

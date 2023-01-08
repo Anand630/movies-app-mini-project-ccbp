@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import LoginHeader from '../LoginHeader'
 
@@ -23,7 +24,7 @@ class Login extends Component {
     const response = await fetch(loginApiUrl, options)
     const responseData = await response.json()
     if (response.ok) {
-      Cookies.set('jwtToken', responseData.jwt_token, {expires: 30})
+      Cookies.set('jwt_token', responseData.jwt_token, {expires: 30})
       const {history} = this.props
       history.replace('/')
     } else {
@@ -42,6 +43,9 @@ class Login extends Component {
   }
 
   render() {
+    if (Cookies.get('jwt_token') !== undefined) {
+      return <Redirect to="/" />
+    }
     const {username, password, loginError, errorMessage} = this.state
     return (
       <div className="login-page-container">
