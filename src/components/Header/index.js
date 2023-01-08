@@ -1,4 +1,5 @@
 import {HiOutlineSearch} from 'react-icons/hi'
+import {GiHamburgerMenu} from 'react-icons/gi'
 import './index.css'
 
 const Header = () => (
@@ -23,6 +24,7 @@ const Header = () => (
               src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673088070/Netflix%20Clone%20App/Header/header_avatar_qistmq.svg"
             />
           </div>
+          <GiHamburgerMenu className="hamburger-icon" />
         </div>
       </div>
     </div>

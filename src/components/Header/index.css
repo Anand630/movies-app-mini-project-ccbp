@@ -1,6 +1,5 @@
 .header-nav-bar {
   padding: 20px 7.5%;
-
   background-color: rgba(19, 19, 19, 0.2);
 }
 
@@ -12,7 +11,16 @@
 .header-movies-logo {
   width: 135px;
   height: 39px;
+
   margin-right: 80px;
+}
+
+@media (max-width: 575px) {
+  .header-movies-logo {
+    width: 100px;
+    height: 27px;
+    margin-right: 50px;
+  }
 }
 
 .menu-options-and-search-avatar-container {
@@ -27,6 +35,12 @@
   list-style: none;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 575px) {
+  .menu-options-container {
+    display: none;
+  }
 }
 
 .menu-option {
@@ -44,10 +58,32 @@
   align-items: center;
 }
 
+@media (max-width: 575px) {
+  .search-avatar-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
 .search-icon {
   color: #ffffff;
   width: 22px;
   height: 22px;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .hamburger-icon {
+    color: #ffffff;
+    width: 22px;
+    height: 22px;
+    margin-left: 30px;
+    display: inline;
+  }
 }
 
 .profile-container {
@@ -56,6 +92,12 @@
   height: 48px;
   width: 47px;
   margin-left: 30px;
+}
+
+@media (max-width: 575px) {
+  .profile-container {
+    display: none;
+  }
 }
 
 .header-avatar {

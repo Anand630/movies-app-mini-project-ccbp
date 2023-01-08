@@ -6,36 +6,8 @@ import Header from '../Header'
 import MovieItem from '../MovieItem'
 import './index.css'
 
-const settings = {
-  dots: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-}
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
 
 class Home extends Component {
   state = {trendingMoviesList: [], originalsMoviesList: []}
@@ -44,6 +16,14 @@ class Home extends Component {
     this.getTrendingNowMoviesList()
     this.getOriginalsMoviesList()
   }
+
+  getFormattedMovieData = eachMovie => ({
+    backdropPath: eachMovie.backdrop_path,
+    id: eachMovie.id,
+    overview: eachMovie.overview,
+    posterPath: eachMovie.poster_path,
+    title: eachMovie.title,
+  })
 
   getTrendingNowMoviesList = async () => {
     const jwtToken = Cookies.get('jwt_token')
@@ -56,9 +36,13 @@ class Home extends Component {
     }
     const response = await fetch(tendingMoviesApiUrl, options)
     const data = await response.json()
-    console.log(response)
-    console.log(data)
-    this.setState({trendingMoviesList: data})
+    // console.log(response)
+    // console.log(data)
+    const formattedTrendingMoviesList = data.results.map(eachMovie =>
+      this.getFormattedMovieData(eachMovie),
+    )
+    // console.log(formattedTrendingMoviesList)
+    this.setState({trendingMoviesList: formattedTrendingMoviesList})
   }
 
   getOriginalsMoviesList = async () => {
@@ -73,12 +57,53 @@ class Home extends Component {
     const data = await response.json()
     console.log(response)
     console.log(data)
-    this.setState({originalsMoviesList: data})
+    const formattedOriginalsMoviesList = data.results.map(eachMovie =>
+      this.getFormattedMovieData(eachMovie),
+    )
+    console.log(formattedOriginalsMoviesList)
+    this.setState({originalsMoviesList: formattedOriginalsMoviesList})
   }
 
   render() {
     if (Cookies.get('jwt_token') === undefined) {
       return <Redirect to="/login" />
+    }
+    const settings = {
+      dots: false,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1124,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 946,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 544,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     }
 
     const {trendingMoviesList, originalsMoviesList} = this.state
@@ -101,12 +126,24 @@ class Home extends Component {
         </div>
 
         <div className="home-page-bottom-container">
-          <h3>Trending Now</h3>
-          <Slider {...settings}>
-            {trendingMoviesList.map(eachMovie => (
-              <MovieItem movieDetails={eachMovie} />
-            ))}
-          </Slider>
+          <div className="trending-movies-container">
+            <h3 className="tending-now-movies-heading">Trending Now</h3>
+
+            <Slider {...settings}>
+              {trendingMoviesList.map(eachMovie => (
+                <MovieItem movieDetails={eachMovie} key={eachMovie.id} />
+              ))}
+            </Slider>
+          </div>
+          <div className="originals-movies-container">
+            <h3 className="originals-heading">Originals</h3>
+
+            <Slider {...settings}>
+              {originalsMoviesList.map(eachMovie => (
+                <MovieItem movieDetails={eachMovie} key={eachMovie.id} />
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     )

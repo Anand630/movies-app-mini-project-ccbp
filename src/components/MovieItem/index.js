@@ -2,13 +2,8 @@ import './index.css'
 
 const MovieItem = props => {
   const {movieDetails} = props
-  const {id} = movieDetails
-  return (
-    <div className="slick-item" key={id}>
-      {/* <img className="movie-image" src={company_logo_url} alt="company logo" /> */}
-      a
-    </div>
-  )
+  const {id, backdropPath, overview, posterPath, title} = movieDetails
+  return <img className="movie-image" src={backdropPath} alt={title} />
 }
 
 export default MovieItem
