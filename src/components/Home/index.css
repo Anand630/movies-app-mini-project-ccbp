@@ -8,7 +8,6 @@
 
 @media (min-width: 576px) {
   .home-page-top-container {
-    background-image: url('https://res.cloudinary.com/dlygjzdo7/image/upload/v1673094235/Netflix%20Clone%20App/Home/home_top_bg-image_lg_q34eq6.png');
     background-size: auto;
     background-position: center;
     height: 605px;

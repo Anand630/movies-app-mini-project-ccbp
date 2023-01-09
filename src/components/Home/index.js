@@ -10,7 +10,7 @@ import './index.css'
 // import 'slick-carousel/slick/slick-theme.css'
 
 class Home extends Component {
-  state = {trendingMoviesList: [], originalsMoviesList: []}
+  state = {trendingMoviesList: [], originalsMoviesList: [], homePageMovie: {}}
 
   componentDidMount() {
     this.getTrendingNowMoviesList()
@@ -24,6 +24,12 @@ class Home extends Component {
     posterPath: eachMovie.poster_path,
     title: eachMovie.title,
   })
+
+  getRandomMovie = trendingMoviesList => {
+    const randomIndex = Math.floor(Math.random() * 10)
+    console.log(randomIndex)
+    return trendingMoviesList[randomIndex]
+  }
 
   getTrendingNowMoviesList = async () => {
     const jwtToken = Cookies.get('jwt_token')
@@ -42,7 +48,11 @@ class Home extends Component {
       this.getFormattedMovieData(eachMovie),
     )
     // console.log(formattedTrendingMoviesList)
-    this.setState({trendingMoviesList: formattedTrendingMoviesList})
+    const homePageMovie = this.getRandomMovie(formattedTrendingMoviesList)
+    this.setState({
+      trendingMoviesList: formattedTrendingMoviesList,
+      homePageMovie,
+    })
   }
 
   getOriginalsMoviesList = async () => {
@@ -106,18 +116,22 @@ class Home extends Component {
       ],
     }
 
-    const {trendingMoviesList, originalsMoviesList} = this.state
+    const {trendingMoviesList, originalsMoviesList, homePageMovie} = this.state
+
+    console.log(homePageMovie)
+    // const topContainerElement = document.getElementById('top-container-bg')
+    // topContainerElement.backgroundImage = homePageMovie.backdropPath
 
     return (
       <div className="home-page-container">
-        <div className="home-page-top-container">
+        <div
+          className="home-page-top-container"
+          style={{backgroundImage: `url(${homePageMovie.backdropPath})`}}
+        >
           <Header />
           <div className="top-container-middle-text-container">
-            <h1 className="superman-heading">Super Man</h1>
-            <p className="superman-description">
-              Superman is a fictional superhero who first appeared in American
-              comic books published by DC Comics.
-            </p>
+            <h1 className="superman-heading">{homePageMovie.title}</h1>
+            <p className="superman-description">{homePageMovie.overview}</p>
             <button className="play-button" type="button">
               Play
             </button>
