@@ -54,7 +54,7 @@
 .superman-heading {
   font-family: Roboto;
   margin-bottom: 0;
-  font-style: normal;
+
   font-weight: 400;
   font-size: 54px;
   line-height: 62px;
@@ -70,7 +70,7 @@
 
 .superman-description {
   font-family: Roboto;
-  font-style: normal;
+
   font-weight: 300;
   font-size: 20px;
   line-height: 26px;
@@ -146,8 +146,8 @@
 }
 
 .tending-now-movies-heading {
-  font-family: Calibri;
-  font-style: normal;
+  font-family: Bree Serif;
+
   font-weight: 400;
   font-size: 24px;
   line-height: 31px;
@@ -155,12 +155,32 @@
 }
 
 .originals-heading {
-  font-family: Calibri;
-  font-style: normal;
+  font-family: Bree Serif;
+
   font-weight: 400;
   font-size: 24px;
   line-height: 31px;
   color: #ffffff;
+}
+
+@media (max-width: 575px) {
+  .tending-now-movies-heading {
+    font-family: Bree Serif;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #ffffff;
+  }
+
+  .originals-heading {
+    font-family: Bree Serif;
+
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 26px;
+    color: #ffffff;
+  }
 }
 
 .slick-prev:before,

@@ -70,7 +70,6 @@
 }
 
 .login-heading {
-  font-style: normal;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
@@ -124,7 +123,7 @@ input::placeholder {
 .login-error-message {
   width: 80%;
   font-family: 'Roboto';
-  font-style: normal;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;

@@ -68,6 +68,13 @@
   }
 }
 
+@media (max-width: 561px) {
+  .movie-image {
+    width: 130px;
+    height: 100px;
+  }
+}
+
 @media (max-width: 544px) {
   .movie-image {
     width: 190px;
@@ -75,7 +82,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 511px) {
   .movie-image {
     width: 180px;
     height: 100px;
