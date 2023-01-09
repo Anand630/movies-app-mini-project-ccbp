@@ -47,7 +47,7 @@ class Home extends Component {
     const formattedTrendingMoviesList = data.results.map(eachMovie =>
       this.getFormattedMovieData(eachMovie),
     )
-    // console.log(formattedTrendingMoviesList)
+    console.log(formattedTrendingMoviesList)
     const homePageMovie = this.getRandomMovie(formattedTrendingMoviesList)
     this.setState({
       trendingMoviesList: formattedTrendingMoviesList,
@@ -84,6 +84,8 @@ class Home extends Component {
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
+      autoplay: true,
+
       responsive: [
         {
           breakpoint: 1124,
@@ -126,17 +128,27 @@ class Home extends Component {
       <div className="home-page-container">
         <div
           className="home-page-top-container"
-          style={{backgroundImage: `url(${homePageMovie.backdropPath})`}}
+          style={{
+            backgroundImage: `url(${homePageMovie.backdropPath})`,
+            backgroundSize: '100% 100%',
+            backgroundRepeat: 'no-repeat',
+          }}
         >
           <Header />
-          <div className="top-container-middle-text-container">
-            <h1 className="superman-heading">{homePageMovie.title}</h1>
-            <p className="superman-description">{homePageMovie.overview}</p>
-            <button className="play-button" type="button">
-              Play
-            </button>
+          <div className="parent-top-middle-container">
+            <div className="top-container-middle-text-container">
+              <h1 className="movie-poster-heading">{homePageMovie.title}</h1>
+              <p className="movie-poster-description">
+                {homePageMovie.overview}
+              </p>
+              <button className="play-button" type="button">
+                Play
+              </button>
+            </div>
+            <div className="top-container-bottom-blur-container">
+              transparent
+            </div>
           </div>
-          <div className="top-container-bottom-blur-container">transparent</div>
         </div>
 
         <div className="home-page-bottom-container">

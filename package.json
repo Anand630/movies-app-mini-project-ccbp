@@ -24,6 +24,7 @@
     "react-router-dom": "5.3.0",
     "react-slick": "0.28.1",
     "react-slick-slider": "0.15.10",
+    "reactjs-popup": "2.0.5",
     "slick-carousel": "1.8.1"
   },
   "devDependencies": {
