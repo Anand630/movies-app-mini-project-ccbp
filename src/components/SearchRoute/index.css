@@ -1,0 +1,17 @@
+.search-route-main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+.search-route-bottom-container {
+  padding: 15px 7.5%;
+  flex-grow: 1;
+}
+
+h1 {
+  font-family: Roboto;
+  color: aliceblue;
+  text-align: center;
+}

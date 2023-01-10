@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import Cookies from 'js-cookie'
 import Header from '../Header'
 import MovieItem from '../MovieItem'
+import Footer from '../Footer'
 import './index.css'
 
 // import 'slick-carousel/slick/slick.css'
@@ -48,6 +49,7 @@ class Home extends Component {
       this.getFormattedMovieData(eachMovie),
     )
     console.log(formattedTrendingMoviesList)
+    // const homePageMovie = formattedTrendingMoviesList[9]
     const homePageMovie = this.getRandomMovie(formattedTrendingMoviesList)
     this.setState({
       trendingMoviesList: formattedTrendingMoviesList,
@@ -80,11 +82,11 @@ class Home extends Component {
     }
     const settings = {
       dots: false,
-      infinite: false,
+      infinite: true,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
 
       responsive: [
         {
@@ -129,26 +131,24 @@ class Home extends Component {
         <div
           className="home-page-top-container"
           style={{
-            backgroundImage: `url(${homePageMovie.backdropPath})`,
+            backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(24, 24, 24, 0.246875) 28.26%, #181818 92.82%, #181818 98.68%, #181818 108.61%) , url(${homePageMovie.backdropPath})`,
             backgroundSize: '100% 100%',
             backgroundRepeat: 'no-repeat',
           }}
         >
           <Header />
-          <div className="parent-top-middle-container">
-            <div className="top-container-middle-text-container">
-              <h1 className="movie-poster-heading">{homePageMovie.title}</h1>
-              <p className="movie-poster-description">
-                {homePageMovie.overview}
-              </p>
-              <button className="play-button" type="button">
-                Play
-              </button>
-            </div>
-            <div className="top-container-bottom-blur-container">
-              transparent
-            </div>
+          {/* <div className="parent-top-middle-container"> */}
+          <div className="top-container-middle-text-container">
+            <h1 className="movie-poster-heading">{homePageMovie.title}</h1>
+            <p className="movie-poster-description">{homePageMovie.overview}</p>
+            <button className="play-button" type="button">
+              Play
+            </button>
           </div>
+          {/* <div className="top-container-bottom-blur-container">
+              transparent
+            </div> */}
+          {/* </div> */}
         </div>
 
         <div className="home-page-bottom-container">
@@ -171,6 +171,7 @@ class Home extends Component {
             </Slider>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

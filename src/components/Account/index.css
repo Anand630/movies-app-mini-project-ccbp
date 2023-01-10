@@ -1,0 +1,89 @@
+.account-page-main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+}
+
+.account-details-container {
+  background-color: #ffffff;
+  padding: 30px 10%;
+  flex-grow: 1;
+}
+
+.account-heading {
+  font-weight: 500;
+  font-family: Roboto;
+}
+
+.horizontal-line {
+  border: 1px solid #cbd5e1;
+  opacity: 0.8;
+}
+
+.query-and-response-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.query-heading {
+  margin-right: 15px;
+  font-weight: 300;
+  font-family: Roboto;
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+.credentials-response-container {
+}
+
+.profile-name {
+  font-family: Roboto;
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.profile-password {
+  font-family: Roboto;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.plan-response-container {
+  display: flex;
+  align-items: center;
+}
+
+.plan-type-text {
+  font-family: Roboto;
+  font-size: 15px;
+  color: #1e293b;
+  margin-right: 10px;
+}
+
+.plan-type-quality {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #1e293b;
+  border: 1px solid #1e293b;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.logout-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.logout-button {
+  border: none;
+  background-color: #e50914;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: Roboto;
+  outline: none;
+  cursor: pointer;
+  color: #ffffff;
+}

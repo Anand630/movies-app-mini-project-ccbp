@@ -1,0 +1,106 @@
+.not-found-page-container {
+  /* background-image: url('https://res.cloudinary.com/dlygjzdo7/image/upload/v1673370842/Netflix%20Clone%20App/Not%20Found/not-found-bg-image_icvqel.png'); */
+  background-image: linear-gradient(
+      180deg,
+      #4368eb -37.08%,
+      rgba(164, 184, 255, 0) 100%
+    ),
+    url('https://res.cloudinary.com/dlygjzdo7/image/upload/v1673370842/Netflix%20Clone%20App/Not%20Found/not-found-bg-image_icvqel.png');
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10%;
+}
+
+@media (max-width: 575px) {
+  .not-found-page-container {
+    padding: 10px 10px;
+  }
+}
+
+.not-found-page-heading {
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .not-found-page-heading {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .not-found-page-heading {
+    font-size: 34px;
+  }
+}
+
+.not-found-description-container {
+  text-align: center;
+}
+
+.description-line-one {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .description-line-one {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .description-line-one {
+    font-size: 15px;
+  }
+}
+
+.description-line-two {
+  margin-top: 0;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+  .description-line-two {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .description-line-two {
+    font-size: 15px;
+  }
+}
+
+.go-to-home-button {
+  background-color: #ffffff;
+  color: #171f46;
+  font-family: Roboto;
+  border: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: 575px) {
+  .go-to-home-button {
+    font-size: 12px;
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+}
