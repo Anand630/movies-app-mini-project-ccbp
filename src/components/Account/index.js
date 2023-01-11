@@ -21,7 +21,7 @@ const Account = props => {
         <h2 className="account-heading">Account</h2>
         <hr className="horizontal-line" />
         <div className="query-and-response-container">
-          <p className="query-heading">Membership</p>
+          <p className="query-heading">Member ship</p>
           <div className="credentials-response-container">
             <p className="profile-name">makky31@gmail.com</p>
             <p className="profile-password">Password: ********</p>

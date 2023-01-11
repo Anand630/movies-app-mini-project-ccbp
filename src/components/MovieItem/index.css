@@ -3,6 +3,7 @@
   height: 170px;
   border-radius: 10px;
   margin: 0 auto;
+  border: 1px solid white;
 }
 
 @media (max-width: 1124px) {

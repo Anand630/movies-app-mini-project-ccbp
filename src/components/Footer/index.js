@@ -1,21 +1,16 @@
-import {
-  AiOutlineGoogle,
-  AiOutlineTwitter,
-  AiOutlineInstagram,
-  AiFillYoutube,
-} from 'react-icons/ai'
+import {FaGoogle, FaTwitter, FaInstagram, FaYoutube} from 'react-icons/fa'
 
 import './index.css'
 
 const Footer = () => (
   <div className="footer-container">
     <div className="social-media-icons-container">
-      <AiOutlineGoogle className="social-media-icons" />
-      <AiOutlineTwitter className="social-media-icons" />
-      <AiOutlineInstagram className="social-media-icons" />
-      <AiFillYoutube className="social-media-icons" />
+      <FaGoogle className="social-media-icons" />
+      <FaTwitter className="social-media-icons" />
+      <FaInstagram className="social-media-icons" />
+      <FaYoutube className="social-media-icons" />
     </div>
-    <p className="contact-us-text">Contact Us</p>
+    <p className="contact-us-text">Contact us</p>
   </div>
 )
 

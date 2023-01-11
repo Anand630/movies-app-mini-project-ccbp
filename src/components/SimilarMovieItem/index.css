@@ -1,0 +1,63 @@
+.similar-movie-image {
+  width: 200px;
+  height: 250px;
+  border-radius: 8px;
+  margin: 0 14px 14px 0;
+}
+
+@media (max-width: 1025px) {
+  .similar-movie-image {
+    width: 180px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 930px) {
+  .similar-movie-image {
+    width: 160px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 836px) {
+  .similar-movie-image {
+    width: 145px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .similar-movie-image {
+    width: 130px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 695px) {
+  .similar-movie-image {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 490px) {
+  .similar-movie-image {
+    width: 100px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 430px) {
+  .similar-movie-image {
+    width: 85px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 370px) {
+  .similar-movie-image {
+    width: 87px;
+    height: 110px;
+    margin: 0 9px 9px 0;
+  }
+}

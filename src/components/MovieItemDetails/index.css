@@ -1,0 +1,283 @@
+.movie-item-details-main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.movie-item-poster-container {
+}
+
+/*  */
+.movie-details-top-poster-text-container {
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  margin-top: 45px;
+}
+
+@media (max-width: 767px) {
+  .movie-details-top-poster-text-container {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 435px) {
+  .movie-details-top-poster-text-container {
+    padding-left: 6%;
+    margin-top: 30px;
+  }
+}
+/*  */
+
+.movie-details-page-title {
+  color: #ffffff;
+  font-family: Bree Serif;
+
+  font-weight: 400;
+  margin-bottom: 0;
+
+  margin-right: 15px;
+
+  font-size: 54px;
+
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .movie-details-page-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .movie-details-page-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .movie-details-page-title {
+    font-size: 24px;
+  }
+}
+
+.movie-duration-certification-release-year-container {
+  display: flex;
+  align-items: center;
+}
+
+.movie-duration {
+  margin-right: 18px;
+  font-family: Roboto;
+  color: #ffffff;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.movie-certificate {
+  margin-right: 18px;
+  font-family: Roboto;
+  color: #ffffff;
+  font-weight: 300;
+  margin-bottom: 0;
+  border: 1px solid #ffffff;
+  padding: 3px 6px;
+}
+
+.release-year {
+  font-family: Roboto;
+  margin-bottom: 0;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+/*  */
+.movie-overview {
+  letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+
+  margin-top: 5px;
+  margin-right: 15px;
+
+  font-family: Roboto;
+
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.305;
+  width: 400px;
+}
+
+@media (max-width: 767px) {
+  .movie-overview {
+    font-size: 17px;
+    line-height: 1.35;
+    width: 95%;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 575px) {
+  .movie-overview {
+    font-size: 16px;
+    line-height: 1.3;
+    width: 95%;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 500px) {
+  .movie-overview {
+    font-size: 14.5px;
+    line-height: 1.35;
+    width: 95%;
+    color: #ffffff;
+  }
+}
+/*  */
+
+.play-button-in-movie-details {
+  width: 72px;
+  height: 40px;
+  color: #171f46;
+  font-family: Roboto;
+
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media (max-width: 575px) {
+  .play-button-in-movie-details {
+    width: 60px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
+.movie-item-details-bottom-container {
+  background-color: #000000;
+  flex-grow: 1;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  padding-bottom: 30px;
+}
+
+.all-labels-and-info-container {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .all-labels-and-info-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 434px) {
+  .all-labels-and-info-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.one-content-label-and-info-container {
+  margin-right: 50px;
+}
+
+.two-content-label-and-info-container {
+  margin-right: 50px;
+}
+
+@media (max-width: 596px) {
+  .one-content-label-and-info-container {
+    margin-right: 20px;
+  }
+
+  .two-content-label-and-info-container {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 435px) {
+  .one-content-label-and-info-container {
+    margin-right: 8px;
+  }
+
+  .two-content-label-and-info-container {
+    margin-right: 8px;
+  }
+}
+
+.content-label-text {
+  font-family: Roboto;
+  color: #64748b;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 575px) {
+  .content-label-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 435px) {
+  .content-label-text {
+    font-size: 14px;
+  }
+}
+
+.genres-list-container {
+  margin-top: 0;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-text {
+  line-height: 1.4;
+  color: #ffffff;
+
+  margin-top: 5px;
+  margin-right: 15px;
+
+  font-family: Roboto;
+
+  font-weight: 300;
+  font-size: 16px;
+}
+
+@media (max-width: 575px) {
+  .info-text {
+    font-size: 14px;
+  }
+}
+
+.similar-movies-heading {
+  font-family: Roboto;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.022em;
+}
+
+.similar-movies-list-container {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -89,7 +89,7 @@ class Home extends Component {
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
 
       responsive: [
         {
@@ -136,7 +136,7 @@ class Home extends Component {
           style={{
             backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(24, 24, 24, 0.246875) 28.26%, #181818 92.82%, #181818 98.68%, #181818 108.61%) , url(${homePageMovie.backdropPath})`,
             backgroundSize: '100% 100%',
-            // backgroundRepeat: 'no-repeat',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <Header />
