@@ -77,7 +77,11 @@ class Header extends Component {
                   Home
                 </Link>
               </li>
-              <li className="menu-option">Popular</li>
+              <li className="menu-option">
+                <Link className="menu-option-nav-link-item" to="/popular">
+                  Popular
+                </Link>
+              </li>
             </ul>
             <div className="search-avatar-container">
               {this.togglingSearchBarDisplayResult()}
@@ -108,7 +112,11 @@ class Header extends Component {
                 Home
               </Link>
             </li>
-            <li className="menu-option-mobile">Popular</li>
+            <li className="menu-option-mobile">
+              <Link className="menu-option-nav-link-item" to="/popular">
+                Popular
+              </Link>
+            </li>
             <li className="menu-option-mobile ">
               <Link className="menu-option-nav-link-item" to="/account">
                 Account

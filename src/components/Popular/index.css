@@ -1,0 +1,158 @@
+.popular-movies-page-main-container {
+  min-height: 100vh;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .searched-results-container {
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  flex-grow: 1;
+}
+
+@media (max-width: 435px) {
+  .searched-results-container {
+    padding: 10px 6%;
+  }
+} */
+
+.searched-movies-container {
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  overflow-y: auto;
+  height: 380px;
+
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  flex-grow: 1;
+}
+
+@media (max-width: 435px) {
+  .searched-movies-container {
+    margin: 10px 6%;
+  }
+}
+
+.each-movie-list-item {
+  /* flex-basis: 24%; */
+
+  padding: 10px 10px;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+@media (max-width: 467px) {
+  .each-movie-list-item {
+    padding: 6px 6px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.each-movie-image {
+  height: 190px;
+  width: 160px;
+  border-radius: 8px;
+}
+
+@media (max-width: 1095px) {
+  .each-movie-image {
+    height: 190px;
+    width: 180px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 979px) {
+  .each-movie-image {
+    height: 186px;
+    width: 155px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 860px) {
+  .each-movie-image {
+    height: 155px;
+    width: 125px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 702px) {
+  .each-movie-image {
+    height: 130px;
+    width: 108px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 623px) {
+  .each-movie-image {
+    height: 150px;
+    width: 125px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 535px) {
+  .each-movie-image {
+    height: 140px;
+    width: 105px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 467px) {
+  .each-movie-image {
+    height: 120px;
+    width: 95px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 401px) {
+  .each-movie-image {
+    height: 110px;
+    width: 85px;
+    border-radius: 8px;
+  }
+}
+
+.footer {
+  padding-top: 0;
+}
+
+/* scroll bar styling */
+
+/* width */
+.searched-movies-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.searched-movies-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px lightskyblue;
+  border-radius: 10px;
+}
+
+/* Handle */
+.searched-movies-container::-webkit-scrollbar-thumb {
+  background: #dd0b27;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.searched-movies-container::-webkit-scrollbar-thumb:hover {
+  background: #8b0303;
+  border: 0.5px solid white;
+}
+
+/* scroll bar styling */

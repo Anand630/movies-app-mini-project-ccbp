@@ -4,13 +4,13 @@
   align-items: center;
   padding-left: 7.5%;
   padding-right: 7.5%;
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 10px;
 }
 
 @media (max-width: 575px) {
   .footer-container {
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 
