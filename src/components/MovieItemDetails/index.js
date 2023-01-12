@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {format} from 'date-fns'
 import Header from '../Header'
 import Footer from '../Footer'
 import SimilarMovieItem from '../SimilarMovieItem'
@@ -78,6 +79,25 @@ class MovieItemDetails extends Component {
     })
   }
 
+  formattedMovieDuration = runtime => {
+    if (runtime < 60) {
+      return `${runtime}m`
+    }
+    const hours = Math.trunc(runtime / 60)
+    const minutes = runtime % 60
+    return minutes > 0 ? `${hours}h ${minutes}m` : `${hours}h`
+  }
+
+  getFormattedDate = releaseDate => {
+    if (releaseDate !== undefined) {
+      // const dateObj = new Date(releaseDate)
+      const formattedDate = format(new Date(releaseDate), 'do MMMM yyyy')
+      console.log(formattedDate)
+      return formattedDate
+    }
+    return ''
+  }
+
   render() {
     const {movieDetails, genres, spokenLanguages, similarMovies} = this.state
 
@@ -88,7 +108,15 @@ class MovieItemDetails extends Component {
       voteAverage,
       budget,
       releaseDate,
+      runtime,
+      adult,
+      title,
     } = movieDetails
+    const duration = this.formattedMovieDuration(runtime)
+    const releaseYear = new Date(releaseDate).getFullYear()
+    const certification = adult ? 'A' : 'U/A'
+    const formattedDate = this.getFormattedDate(releaseDate)
+
     return (
       <div className="movie-item-details-main-container">
         <div
@@ -101,11 +129,11 @@ class MovieItemDetails extends Component {
         >
           <Header />
           <div className="movie-details-top-poster-text-container">
-            <h1 className="movie-details-page-title">Avengers</h1>
+            <h1 className="movie-details-page-title">{title}</h1>
             <div className="movie-duration-certification-release-year-container">
-              <p className="movie-duration">2h 42m</p>
-              <p className="movie-certificate">U/A</p>
-              <p className="release-year">2007</p>
+              <p className="movie-duration">{duration}</p>
+              <p className="movie-certificate">{certification}</p>
+              <p className="release-year">{`${releaseYear}`}</p>
             </div>
             <p className="movie-overview">{overview}</p>
             <button className="play-button-in-movie-details" type="button">
@@ -145,7 +173,7 @@ class MovieItemDetails extends Component {
               <h3 className="content-label-text">Budget</h3>
               <p className="info-text">{budget}</p>
               <h3 className="content-label-text">Release Date</h3>
-              <p className="info-text">{releaseDate}</p>
+              <p className="info-text">{formattedDate}</p>
             </div>
           </div>
           <h3 className="similar-movies-heading">More like this</h3>

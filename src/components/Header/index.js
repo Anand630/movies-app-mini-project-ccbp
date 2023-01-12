@@ -8,7 +8,11 @@ import {RiCloseFill} from 'react-icons/ri'
 import './index.css'
 
 class Header extends Component {
-  state = {displayHamburgerMenu: false, isSearchBarActive: false}
+  state = {
+    displayHamburgerMenu: false,
+    isSearchBarActive: false,
+    searchInput: '',
+  }
 
   componentDidMount() {
     const {viewSearchBar} = this.props
@@ -33,14 +37,35 @@ class Header extends Component {
     history.push('/search')
   }
 
+  onSearchInput = e => {
+    this.setState({searchInput: e.target.value})
+  }
+
+  onSearchBtnClick = () => {
+    const {searchInput} = this.state
+    const {searchMovies} = this.props
+    searchMovies(searchInput)
+  }
+
   togglingSearchBarDisplayResult = () => {
-    const {isSearchBarActive} = this.state
+    const {isSearchBarActive, searchInput} = this.state
+
     if (isSearchBarActive) {
       return (
         <div className="search-bar-icon-container">
-          <input placeholder="Search" type="search" className="search-input" />
+          <input
+            onChange={this.onSearchInput}
+            value={searchInput}
+            placeholder="Search"
+            type="search"
+            className="search-input"
+          />
           <div className="search-button-container">
-            <button className="search-icon-button" type="button">
+            <button
+              onClick={this.onSearchBtnClick}
+              className="search-icon-button"
+              type="button"
+            >
               <HiOutlineSearch className="search-icon-alone" />
             </button>
           </div>
@@ -60,6 +85,7 @@ class Header extends Component {
 
   render() {
     const {displayHamburgerMenu} = this.state
+
     return (
       <nav className="header-nav-bar">
         <div className="nav-items-container">
