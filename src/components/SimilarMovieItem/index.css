@@ -40,7 +40,7 @@
   }
 }
 
-@media (max-width: 490px) {
+/* @media (max-width: 490px) {
   .similar-movie-image {
     width: 100px;
     height: 140px;
@@ -60,4 +60,4 @@
     height: 110px;
     margin: 0 9px 9px 0;
   }
-}
+} */

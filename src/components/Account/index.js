@@ -1,4 +1,4 @@
-import {Cookies} from 'js-cookie'
+import Cookies from 'js-cookie'
 
 import Header from '../Header'
 import Footer from '../Footer'
