@@ -23,7 +23,9 @@ const Account = props => {
         <div className="query-and-response-container">
           <p className="query-heading">Member ship</p>
           <div className="credentials-response-container">
-            <p className="profile-name">makky31@gmail.com</p>
+            <p className="profile-name">
+              {localStorage.getItem('accountName')}
+            </p>
             <p className="profile-password">Password: ********</p>
           </div>
         </div>

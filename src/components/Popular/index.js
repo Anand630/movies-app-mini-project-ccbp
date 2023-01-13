@@ -45,7 +45,7 @@ class Popular extends Component {
       <div className="popular-movies-page-main-container">
         <Header />
         {/* <div className="searched-results-container"> */}
-        <ul className="searched-movies-container">
+        <ul className="popular-movies-container">
           {searchedMoviesList.map(eachMovie => (
             <li className="each-movie-list-item" key={eachMovie.id}>
               <Link to={`/movies/${eachMovie.id}`}>

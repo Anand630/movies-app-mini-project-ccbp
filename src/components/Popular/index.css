@@ -17,7 +17,7 @@
   }
 } */
 
-.searched-movies-container {
+.popular-movies-container {
   margin-top: 10px;
   margin-bottom: 0;
 
@@ -35,7 +35,7 @@
 }
 
 @media (max-width: 435px) {
-  .searched-movies-container {
+  .popular-movies-container {
     margin: 10px 6%;
   }
 }
@@ -137,24 +137,24 @@
 /* scroll bar styling */
 
 /* width */
-.searched-movies-container::-webkit-scrollbar {
+.popular-movies-container::-webkit-scrollbar {
   width: 8px;
 }
 
 /* Track */
-.searched-movies-container::-webkit-scrollbar-track {
+.popular-movies-container::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px lightskyblue;
   border-radius: 10px;
 }
 
 /* Handle */
-.searched-movies-container::-webkit-scrollbar-thumb {
+.popular-movies-container::-webkit-scrollbar-thumb {
   background: #dd0b27;
   border-radius: 10px;
 }
 
 /* Handle on hover */
-.searched-movies-container::-webkit-scrollbar-thumb:hover {
+.popular-movies-container::-webkit-scrollbar-thumb:hover {
   background: #8b0303;
   border: 0.5px solid white;
 }

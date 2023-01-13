@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #000000;
+  background-color: #131313;
 }
 
 .search-route-bottom-container {
@@ -11,7 +11,7 @@
   padding-left: 0;
   list-style: none;
   display: flex;
-
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -21,20 +21,83 @@
   }
 }
 
-@media (max-width: 365px) {
-  .search-route-bottom-container {
-    margin: 20px 4%;
+.no-results-found-container {
+  flex-grow: 1 !important;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 20px 8px;
+}
+
+.no-movies-found-image {
+  width: 450px;
+}
+
+@media (max-width: 767px) {
+  .no-movies-found-image {
+    width: 380px;
   }
 }
 
-.searched-movie-image-container {
+@media (max-width: 575px) {
+  .no-movies-found-image {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .no-movies-found-image {
+    width: 250px;
+  }
+}
+
+.searched-text-display-sentence {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media (max-width: 575px) {
+  .searched-text-display-sentence {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .searched-text-display-sentence {
+    font-size: 14px;
+  }
+}
+
+/* @media (max-width: 365px) {
+  .search-route-bottom-container {
+    margin: 20px 4%;
+  }
+} */
+
+/* .searched-movie-image-container {
   margin: 0 20px 20px 0;
+} */
+
+.searched-movie-image-container {
+  padding: 10px;
+}
+
+@media (max-width: 467px) {
+  .searched-movie-image-container {
+    padding: 6px 6px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .searched-movie-image {
   border-radius: 8px;
-  height: 250px;
-  width: 200px;
+  height: 190px;
+  width: 160px;
   /* border: 1px solid rgb(255, 69, 69); */
 }
 
@@ -42,6 +105,71 @@
   box-shadow: 0 0 8px 6px rgba(158, 8, 8, 1);
 }
 
+@media (max-width: 1095px) {
+  .searched-movie-image {
+    height: 190px;
+    width: 180px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 979px) {
+  .searched-movie-image {
+    height: 186px;
+    width: 155px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 860px) {
+  .searched-movie-image {
+    height: 155px;
+    width: 125px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 702px) {
+  .searched-movie-image {
+    height: 130px;
+    width: 108px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 623px) {
+  .searched-movie-image {
+    height: 150px;
+    width: 125px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 535px) {
+  .searched-movie-image {
+    height: 140px;
+    width: 105px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 467px) {
+  .searched-movie-image {
+    height: 120px;
+    width: 95px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 401px) {
+  .searched-movie-image {
+    height: 110px;
+    width: 85px;
+    border-radius: 8px;
+  }
+}
+
+/*  
 @media (max-width: 767px) {
   .searched-movie-image {
     border-radius: 8px;
@@ -85,3 +213,4 @@
     margin: 0 12px 12px 0;
   }
 }
+*/

@@ -2,6 +2,7 @@ import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import LoginHeader from '../LoginHeader'
+import RequiredDataContext from '../../context/RequiredDataContext'
 
 import './index.css'
 
@@ -24,6 +25,8 @@ class Login extends Component {
     const response = await fetch(loginApiUrl, options)
     const responseData = await response.json()
     if (response.ok) {
+      localStorage.setItem('accountName', username)
+      localStorage.setItem('accountPassword', password)
       Cookies.set('jwt_token', responseData.jwt_token, {expires: 30})
       const {history} = this.props
       history.replace('/')
@@ -47,6 +50,7 @@ class Login extends Component {
       return <Redirect to="/" />
     }
     const {username, password, loginError, errorMessage} = this.state
+
     return (
       <div className="login-page-container">
         <LoginHeader />

@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #000000;
+  background-color: #131313;
 }
 
 .account-details-container {
@@ -27,7 +27,8 @@
 }
 
 .query-heading {
-  margin-right: 15px;
+  margin-top: 13px;
+  margin-right: 18px;
   font-weight: 300;
   font-family: Roboto;
   font-size: 18px;

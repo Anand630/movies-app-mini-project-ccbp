@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
+
 import Slider from 'react-slick'
 import Cookies from 'js-cookie'
 import Header from '../Header'
@@ -126,8 +127,6 @@ class Home extends Component {
     const {trendingMoviesList, originalsMoviesList, homePageMovie} = this.state
 
     console.log(homePageMovie)
-    // const topContainerElement = document.getElementById('top-container-bg')
-    // topContainerElement.backgroundImage = homePageMovie.backdropPath
 
     return (
       <div className="home-page-container">
