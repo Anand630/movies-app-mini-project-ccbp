@@ -24,7 +24,7 @@ class Header extends Component {
   componentDidMount() {
     const {viewSearchBar} = this.props
     if (viewSearchBar) {
-      console.log(viewSearchBar)
+      // console.log(viewSearchBar)
       this.setState({isSearchBarActive: viewSearchBar})
     }
   }
@@ -101,7 +101,7 @@ class Header extends Component {
           const {activeTabId, changeActiveTabId} = value
 
           const updateActiveTabId = e => {
-            console.log(`the innerText is -->${e.target.innerText}<--`)
+            // console.log(`the innerText is -->${e.target.innerText}<--`)
             if (e.target.innerText === '') {
               changeActiveTabId(tabIdConstants.account)
             } else {

@@ -31,7 +31,7 @@ class Popular extends Component {
 
     const response = await fetch(apiUrl, options)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     const formattedSearchedMoviesList = data.results.map(eachMovie =>
       this.getFormattedMovieData(eachMovie),
     )
@@ -40,7 +40,7 @@ class Popular extends Component {
 
   render() {
     const {searchedMoviesList} = this.state
-    console.log(searchedMoviesList)
+    // console.log(searchedMoviesList)
     return (
       <div className="popular-movies-page-main-container">
         <Header />

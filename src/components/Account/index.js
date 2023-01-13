@@ -6,7 +6,7 @@ import Footer from '../Footer'
 import './index.css'
 
 const Account = props => {
-  console.log(props)
+  // console.log(props)
 
   const logoutFromAccount = () => {
     Cookies.remove('jwt_token')

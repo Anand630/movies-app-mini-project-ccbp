@@ -16,7 +16,7 @@ class SearchRoute extends Component {
   })
 
   searchMovies = async searchedText => {
-    console.log(searchedText)
+    // console.log(searchedText)
     const jwtToken = Cookies.get('jwt_token')
     const searchApiUrl = `https://apis.ccbp.in/movies-app/movies-search?search=${searchedText}`
     const options = {
@@ -26,11 +26,11 @@ class SearchRoute extends Component {
     }
     const response = await fetch(searchApiUrl, options)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     const formattedMoviesList = data.results.map(eachMovie =>
       this.getFormattedMovie(eachMovie),
     )
-    console.log(formattedMoviesList)
+    // console.log(formattedMoviesList)
     this.setState({
       searchedMoviesList: formattedMoviesList,
       fetchingDone: true,

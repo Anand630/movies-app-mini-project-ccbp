@@ -54,22 +54,22 @@ class MovieItemDetails extends Component {
 
     const response = await fetch(movieDetailsApiUrl, options)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     // movieDetails
     const formattedMovieDetails = this.getFormattedMovieDetails(
       data.movie_details,
     )
-    console.log(formattedMovieDetails)
+    // console.log(formattedMovieDetails)
     // similar movie details
     const formattedSimilarMoviesList = data.movie_details.similar_movies.map(
       eachMovie => this.getFormattedSimilarMovie(eachMovie),
     )
-    console.log(formattedSimilarMoviesList)
+    // console.log(formattedSimilarMoviesList)
     // spoken languages
     const formattedSpokenLanguagesList = data.movie_details.spoken_languages.map(
       eachLanguage => this.getFormattedSpokenLanguagesList(eachLanguage),
     )
-    console.log(formattedSpokenLanguagesList)
+    // console.log(formattedSpokenLanguagesList)
 
     this.setState({
       movieDetails: formattedMovieDetails,
@@ -92,7 +92,7 @@ class MovieItemDetails extends Component {
     if (releaseDate !== undefined) {
       // const dateObj = new Date(releaseDate)
       const formattedDate = format(new Date(releaseDate), 'do MMMM yyyy')
-      console.log(formattedDate)
+      // console.log(formattedDate)
       return formattedDate
     }
     return ''

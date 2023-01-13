@@ -2,7 +2,6 @@ import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import LoginHeader from '../LoginHeader'
-import RequiredDataContext from '../../context/RequiredDataContext'
 
 import './index.css'
 
@@ -33,8 +32,8 @@ class Login extends Component {
     } else {
       this.setState({loginError: true, errorMessage: responseData.error_msg})
     }
-    console.log(response)
-    console.log(responseData)
+    // console.log(response)
+    // console.log(responseData)
   }
 
   storeUsername = e => {

@@ -12,26 +12,19 @@ import RequiredDataContext from './context/RequiredDataContext'
 import './App.css'
 
 class App extends Component {
-  state = {activeTabId: 'Home', accountName: '', accountPassword: ''}
+  state = {activeTabId: 'Home'}
 
   changeActiveTabId = tabId => {
     this.setState({activeTabId: tabId})
   }
 
-  updateCredentials = (accountName, accountPassword) => {
-    this.setState({accountName, accountPassword})
-  }
-
   render() {
-    const {activeTabId, accountName, accountPassword} = this.state
+    const {activeTabId} = this.state
     return (
       <RequiredDataContext.Provider
         value={{
           activeTabId,
           changeActiveTabId: this.changeActiveTabId,
-          accountName,
-          accountPassword,
-          updateCredentials: this.updateCredentials,
         }}
       >
         <Switch>

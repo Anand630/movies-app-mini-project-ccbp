@@ -87,7 +87,6 @@
 }
 
 .menu-option:hover {
-  background-color: rgba(241, 226, 228, 0.571);
   font-weight: 500;
   /* font-family: 'Open Sans'; */
 }
@@ -345,7 +344,6 @@
 }
 
 .menu-option-mobile:hover {
-  background-color: rgba(241, 226, 228, 0.571);
   font-weight: 500;
   /* font-family: 'Open Sans'; */
 }
