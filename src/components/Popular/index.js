@@ -72,6 +72,7 @@ class Popular extends Component {
               <li className="each-movie-list-item" key={eachMovie.id}>
                 <Link to={`/movies/${eachMovie.id}`}>
                   <img
+                    testid="movieItem"
                     className="each-movie-image"
                     src={eachMovie.posterPath}
                     alt={eachMovie.title}
@@ -84,7 +85,10 @@ class Popular extends Component {
       case apiConstants.inProgress:
         return (
           // testid='loader'
-          <div className="popular-movies-page-loading-or-failure-container">
+          <div
+            testid="loader"
+            className="popular-movies-page-loading-or-failure-container"
+          >
             <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
           </div>
         )

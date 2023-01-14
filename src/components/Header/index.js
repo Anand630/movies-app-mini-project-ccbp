@@ -71,6 +71,7 @@ class Header extends Component {
           />
           <div className="search-button-container">
             <button
+              testid="searchButton"
               onClick={this.onSearchBtnClick}
               className="search-icon-button"
               type="button"
@@ -83,6 +84,7 @@ class Header extends Component {
     }
     return (
       <button
+        testid="searchButton"
         onClick={this.navigateToSearchRoute}
         className="search-icon-button"
         type="button"

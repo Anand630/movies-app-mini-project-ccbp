@@ -85,7 +85,11 @@ class SearchRoute extends Component {
         ) : (
           <ul className="search-route-bottom-container">
             {searchedMoviesList.map(eachMovie => (
-              <li className="searched-movie-image-container" key={eachMovie.id}>
+              <li
+                testid="movieItem"
+                className="searched-movie-image-container"
+                key={eachMovie.id}
+              >
                 <Link to={`movies/${eachMovie.id}`}>
                   <img
                     className="searched-movie-image"
@@ -100,7 +104,10 @@ class SearchRoute extends Component {
       case apiConstants.inProgress:
         return (
           // testid='loader'
-          <div className="searched-movies-page-loading-or-failure-container">
+          <div
+            testid="loader"
+            className="searched-movies-page-loading-or-failure-container"
+          >
             <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
           </div>
         )

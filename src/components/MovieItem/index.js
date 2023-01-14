@@ -3,10 +3,12 @@ import './index.css'
 
 const MovieItem = props => {
   const {movieDetails} = props
-  const {id, backdropPath, title} = movieDetails
+  const {id, posterPath, title} = movieDetails
   return (
     <Link to={`/movies/${id}`}>
-      <img className="movie-image" src={backdropPath} alt={title} />
+      <div testid="movieItem">
+        <img className="movie-image" src={posterPath} alt={title} />
+      </div>
     </Link>
   )
 }

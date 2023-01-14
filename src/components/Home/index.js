@@ -3,7 +3,7 @@ import {Redirect} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import Slider from 'react-slick'
 import Cookies from 'js-cookie'
-import {TiWarning} from 'react-icons/ti'
+// import {TiWarning} from 'react-icons/ti'
 import Header from '../Header'
 import MovieItem from '../MovieItem'
 import Footer from '../Footer'
@@ -161,7 +161,9 @@ class Home extends Component {
         return (
           <div className="top-container-middle-text-container">
             <h1 className="movie-poster-heading">{homePageMovie.title}</h1>
-            <p className="movie-poster-description">{homePageMovie.overview}</p>
+            <h3 className="movie-poster-description">
+              {homePageMovie.overview}
+            </h3>
             <button className="play-button" type="button">
               Play
             </button>
@@ -170,14 +172,21 @@ class Home extends Component {
       case apiConstants.inProgress:
         return (
           // testid='loader'
-          <div className="top-container-failure-or-loading-container">
+          <div
+            testid="loader"
+            className="top-container-failure-or-loading-container"
+          >
             <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
           </div>
         )
       case apiConstants.failure:
         return (
           <div className="top-container-failure-or-loading-container">
-            <TiWarning className="warning-icon-top" />
+            <img
+              src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
+              className="warning-icon-top"
+              alt="failure view"
+            />
             <p className="failure-text-top">
               Something went wrong. Please try again
             </p>
@@ -212,14 +221,21 @@ class Home extends Component {
       case apiConstants.inProgress:
         return (
           // testid='loader'
-          <div className="trending-originals-failure-or-loading-container">
+          <div
+            testid="loader"
+            className="trending-originals-failure-or-loading-container"
+          >
             <Loader type="TailSpin" color="#D81F26" height={30} width={30} />
           </div>
         )
       case apiConstants.failure:
         return (
           <div className="trending-originals-failure-or-loading-container">
-            <TiWarning className="warning-icon-bottom" />
+            <img
+              src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
+              className="warning-icon-bottom"
+              alt="failure view"
+            />
             <p className="failure-text-bottom">
               Something went wrong. Please try again
             </p>
@@ -256,14 +272,21 @@ class Home extends Component {
       case apiConstants.inProgress:
         return (
           // testid='loader'
-          <div className="trending-originals-failure-or-loading-container">
+          <div
+            testid="loader"
+            className="trending-originals-failure-or-loading-container"
+          >
             <Loader type="TailSpin" color="#D81F26" height={30} width={30} />
           </div>
         )
       case apiConstants.failure:
         return (
           <div className="trending-originals-failure-or-loading-container">
-            <TiWarning className="warning-icon-bottom" />
+            <img
+              src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
+              className="warning-icon-bottom"
+              alt="failure view"
+            />
             <p className="failure-text-bottom">
               Something went wrong. Please try again
             </p>
@@ -290,7 +313,7 @@ class Home extends Component {
 
     // console.log(homePageMovie)
 
-    const ImageUrl = dataFetched ? `url(${homePageMovie.backdropPath})` : ''
+    const ImageUrl = dataFetched ? `url(${homePageMovie.posterPath})` : ''
 
     const bgOrLinearGrad = dataFetched
       ? `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(24, 24, 24, 0.246875) 28.26%, #181818 92.82%, #181818 98.68%, #181818 108.61%)`
