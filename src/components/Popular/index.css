@@ -40,6 +40,79 @@
   }
 }
 
+/* loading and failure styling */
+
+.popular-movies-page-loading-or-failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  flex-grow: 1;
+  /* border: 1px solid gold; */
+
+  margin: 20px 7.5% 0 7.5%;
+  margin-right: 7.5%;
+}
+
+@media (max-width: 435px) {
+  .popular-movies-page-loading-or-failure-container {
+    margin: 10px 6%;
+    margin: 15px 6% 0 6%;
+  }
+}
+
+.popular-page-failure-image {
+  width: 350px;
+}
+
+@media (max-width: 575px) {
+  .popular-page-failure-image {
+    width: 260px;
+  }
+}
+
+@media (max-width: 435px) {
+  .popular-page-failure-image {
+    width: 200px;
+  }
+}
+
+.popular-page-failure-description {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Roboto;
+  text-align: center;
+}
+
+@media (max-width: 435px) {
+  .popular-page-failure-description {
+    font-size: 14px;
+
+    letter-spacing: 0.03rem;
+  }
+}
+
+.popular-page-try-again-button {
+  background-color: #ffffff;
+  font-family: Roboto;
+  padding: 8px 12px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: 435px) {
+  .popular-page-try-again-button {
+    background-color: #ffffff;
+    font-family: Roboto;
+    font-size: 12px;
+  }
+}
+
+/*  */
+
 .each-movie-list-item {
   /* flex-basis: 24%; */
 

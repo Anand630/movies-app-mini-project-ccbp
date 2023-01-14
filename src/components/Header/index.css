@@ -83,6 +83,7 @@
 
 .active-tab-class {
   background-color: rgba(255, 0, 34, 0.571);
+  /* background: radial-gradient(black, rgba(255, 0, 34, 0.571)); */
   font-weight: 500;
 }
 

@@ -286,12 +286,7 @@ class Home extends Component {
       return <Redirect to="/login" />
     }
 
-    const {
-      trendingMoviesList,
-      originalsMoviesList,
-      homePageMovie,
-      dataFetched,
-    } = this.state
+    const {homePageMovie, dataFetched} = this.state
 
     // console.log(homePageMovie)
 

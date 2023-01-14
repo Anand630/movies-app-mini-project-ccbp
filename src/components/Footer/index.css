@@ -45,12 +45,13 @@
   font-size: 18px;
   color: #ffffff;
   letter-spacing: 0.3px;
+  text-align: center;
 }
 
 @media (max-width: 575px) {
   .contact-us-text {
     font-family: Roboto;
-    font-size: 14px;
+    font-size: 13px;
     color: #ffffff;
     letter-spacing: 0.3px;
   }
