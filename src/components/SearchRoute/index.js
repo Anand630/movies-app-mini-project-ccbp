@@ -38,9 +38,10 @@ class SearchRoute extends Component {
       },
     }
     const response = await fetch(searchApiUrl, options)
-    const data = await response.json()
+
     // console.log(data)
     if (response.ok) {
+      const data = await response.json()
       const formattedMoviesList = data.results.map(eachMovie =>
         this.getFormattedMovie(eachMovie),
       )

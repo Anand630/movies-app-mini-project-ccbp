@@ -12,6 +12,7 @@ const tabIdConstants = {
   home: 'Home',
   popular: 'Popular',
   account: 'Account',
+  search: 'Search',
 }
 
 class Header extends Component {
@@ -56,44 +57,6 @@ class Header extends Component {
     }
   }
 
-  togglingSearchBarDisplayResult = () => {
-    const {isSearchBarActive, searchInput} = this.state
-
-    if (isSearchBarActive) {
-      return (
-        <div className="search-bar-icon-container">
-          <input
-            onChange={this.onSearchInput}
-            value={searchInput}
-            placeholder="Search"
-            type="search"
-            className="search-input"
-          />
-          <div className="search-button-container">
-            <button
-              testid="searchButton"
-              onClick={this.onSearchBtnClick}
-              className="search-icon-button"
-              type="button"
-            >
-              <HiOutlineSearch className="search-icon-alone" />
-            </button>
-          </div>
-        </div>
-      )
-    }
-    return (
-      <button
-        testid="searchButton"
-        onClick={this.navigateToSearchRoute}
-        className="search-icon-button"
-        type="button"
-      >
-        <HiOutlineSearch className="search-icon-alone" />
-      </button>
-    )
-  }
-
   render() {
     const {displayHamburgerMenu} = this.state
 
@@ -104,11 +67,53 @@ class Header extends Component {
 
           const updateActiveTabId = e => {
             // console.log(`the innerText is -->${e.target.innerText}<--`)
-            if (e.target.innerText === '') {
-              changeActiveTabId(tabIdConstants.account)
+            if (
+              e.target.id === tabIdConstants.home ||
+              e.target.id === tabIdConstants.search
+            ) {
+              changeActiveTabId(e.target.id)
             } else {
               changeActiveTabId(e.target.innerText)
             }
+          }
+
+          const togglingSearchBarDisplayResult = () => {
+            const {isSearchBarActive, searchInput} = this.state
+
+            if (isSearchBarActive) {
+              return (
+                <div className="search-bar-icon-container">
+                  <input
+                    onChange={this.onSearchInput}
+                    value={searchInput}
+                    placeholder="Search"
+                    type="search"
+                    className="search-input"
+                  />
+                  <div className="search-button-container">
+                    <button
+                      testid="searchButton"
+                      onClick={this.onSearchBtnClick}
+                      className="search-icon-button"
+                      type="button"
+                    >
+                      <HiOutlineSearch className="search-icon-alone" />
+                    </button>
+                  </div>
+                </div>
+              )
+            }
+            return (
+              <button
+                testid="searchButton"
+                onClick={(this.navigateToSearchRoute, updateActiveTabId)}
+                id="Search"
+                className="search-icon-button"
+                type="button"
+              >
+                <HiOutlineSearch className="search-icon-alone" />
+              </button>
+            )
           }
 
           const homeClass =
@@ -122,6 +127,8 @@ class Header extends Component {
               <div className="nav-items-container">
                 <Link className="logo-nav-link" to="/">
                   <img
+                    onClick={updateActiveTabId}
+                    id="Home"
                     className="header-movies-logo"
                     src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1672990957/Netflix%20Clone%20App/Login/login_movies_logo_ngzlug.png"
                     alt="website logo"
@@ -148,7 +155,7 @@ class Header extends Component {
                     </Link>
                   </ul>
                   <div className="search-avatar-container">
-                    {this.togglingSearchBarDisplayResult()}
+                    {togglingSearchBarDisplayResult()}
                     <Link className="profile-nav-link-item" to="/account">
                       <div className="profile-container">
                         <img

@@ -81,7 +81,7 @@ class Home extends Component {
   })
 
   getRandomMovie = trendingMoviesList => {
-    const randomIndex = Math.floor(Math.random() * 10)
+    const randomIndex = Math.floor(Math.random() * trendingMoviesList.length)
     // console.log(randomIndex)
     return trendingMoviesList[randomIndex]
   }
@@ -97,10 +97,11 @@ class Home extends Component {
       },
     }
     const response = await fetch(tendingMoviesApiUrl, options)
-    const data = await response.json()
+
     // // console.log(response)
     // // console.log(data)
     if (response.ok) {
+      const data = await response.json()
       const formattedTrendingMoviesList = data.results.map(eachMovie =>
         this.getFormattedMovieData(eachMovie),
       )
@@ -127,10 +128,11 @@ class Home extends Component {
       },
     }
     const response = await fetch(originalsMoviesApiUrl, options)
-    const data = await response.json()
+
     // console.log(response)
     // console.log(data)
     if (response.ok) {
+      const data = await response.json()
       const formattedOriginalsMoviesList = data.results.map(eachMovie =>
         this.getFormattedMovieData(eachMovie),
       )
@@ -161,9 +163,9 @@ class Home extends Component {
         return (
           <div className="top-container-middle-text-container">
             <h1 className="movie-poster-heading">{homePageMovie.title}</h1>
-            <h3 className="movie-poster-description">
+            <h1 className="movie-poster-description">
               {homePageMovie.overview}
-            </h3>
+            </h1>
             <button className="play-button" type="button">
               Play
             </button>
@@ -313,7 +315,7 @@ class Home extends Component {
 
     // console.log(homePageMovie)
 
-    const ImageUrl = dataFetched ? `url(${homePageMovie.posterPath})` : ''
+    const ImageUrl = dataFetched ? `url(${homePageMovie.backdropPath})` : ''
 
     const bgOrLinearGrad = dataFetched
       ? `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(24, 24, 24, 0.246875) 28.26%, #181818 92.82%, #181818 98.68%, #181818 108.61%)`
@@ -338,12 +340,12 @@ class Home extends Component {
 
         <div className="home-page-bottom-container">
           <div className="trending-movies-container">
-            <h3 className="tending-now-movies-heading">Trending Now</h3>
+            <h1 className="trending-now-movies-heading">Trending Now</h1>
 
             {this.trendingMoviesView()}
           </div>
           <div className="originals-movies-container">
-            <h3 className="originals-heading">Originals</h3>
+            <h1 className="originals-heading">Originals</h1>
 
             {this.originalsView()}
           </div>

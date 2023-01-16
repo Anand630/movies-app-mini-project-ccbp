@@ -41,9 +41,10 @@ class Popular extends Component {
     }
 
     const response = await fetch(apiUrl, options)
-    const data = await response.json()
+
     // console.log(data)
     if (response.ok) {
+      const data = await response.json()
       const formattedPopularMoviesList = data.results.map(eachMovie =>
         this.getFormattedMovieData(eachMovie),
       )
@@ -64,6 +65,7 @@ class Popular extends Component {
 
   getPopularResultantView = () => {
     const {popularMoviesList, apiStatus} = this.state
+    // console.log(popularMoviesList[0])
     switch (apiStatus) {
       case apiConstants.success:
         return (
@@ -72,7 +74,7 @@ class Popular extends Component {
               <li className="each-movie-list-item" key={eachMovie.id}>
                 <Link to={`/movies/${eachMovie.id}`}>
                   <img
-                    testid="movieItem"
+                    // testid="movieItem"
                     className="each-movie-image"
                     src={eachMovie.posterPath}
                     alt={eachMovie.title}

@@ -71,10 +71,11 @@ class MovieItemDetails extends Component {
     }
 
     const response = await fetch(movieDetailsApiUrl, options)
-    const data = await response.json()
+
     // console.log(data)
     // movieDetails
     if (response.ok) {
+      const data = await response.json()
       const formattedMovieDetails = this.getFormattedMovieDetails(
         data.movie_details,
       )
@@ -137,7 +138,8 @@ class MovieItemDetails extends Component {
     } = this.state
 
     const {
-      backdropPath,
+      // backdropPath,
+      posterPath,
       overview,
       voteCount,
       voteAverage,
@@ -158,7 +160,7 @@ class MovieItemDetails extends Component {
             <div
               className="movie-item-poster-container"
               style={{
-                backgroundImage: `linear-gradient(90.33deg, #181818 -6.5%, rgba(24, 24, 24, 0.6) 57.15%, rgba(24, 24, 24, 0) 99.77%), url(${backdropPath})`,
+                backgroundImage: `linear-gradient(90.33deg, #181818 -6.5%, rgba(24, 24, 24, 0.6) 57.15%, rgba(24, 24, 24, 0) 99.77%), url(${posterPath})`,
                 backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat',
               }}
@@ -229,7 +231,7 @@ class MovieItemDetails extends Component {
         return (
           <>
             <Header />
-            <div // testid='loader'
+            <div
               testid="loader"
               className="movie-details-page-loader-failure-container"
             >

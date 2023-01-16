@@ -7,7 +7,7 @@
 }
 
 .home-page-top-container {
-  background-size: cover;
+  /* background-size: cover; */
   background-position: center;
   min-height: 100%;
 
@@ -413,7 +413,7 @@
   margin-bottom: 20px;
 }
 
-.tending-now-movies-heading {
+.trending-now-movies-heading {
   font-family: Bree Serif;
 
   font-weight: 400;
