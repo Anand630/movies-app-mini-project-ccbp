@@ -74,7 +74,7 @@ class Popular extends Component {
               <li className="each-movie-list-item" key={eachMovie.id}>
                 <Link to={`/movies/${eachMovie.id}`}>
                   <img
-                    // testid="movieItem"
+                    testid="movieItem"
                     className="each-movie-image"
                     src={eachMovie.posterPath}
                     alt={eachMovie.title}

@@ -138,7 +138,8 @@ class Home extends Component {
       )
       // console.log(formattedOriginalsMoviesList)
       // const homePageMovie = formattedOriginalsMoviesList[0]
-      const homePageMovie = this.getRandomMovie(formattedOriginalsMoviesList)
+      const unformattedHomePageMovie = this.getRandomMovie(data.results)
+      const homePageMovie = this.getFormattedMovieData(unformattedHomePageMovie)
       this.setState({
         originalsMoviesList: formattedOriginalsMoviesList,
         homePageMovie,

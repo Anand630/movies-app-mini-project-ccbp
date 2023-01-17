@@ -42,6 +42,7 @@ class Header extends Component {
 
   navigateToSearchRoute = () => {
     const {history} = this.props
+
     history.push('/search')
   }
 
@@ -67,18 +68,23 @@ class Header extends Component {
 
           const updateActiveTabId = e => {
             // console.log(`the innerText is -->${e.target.innerText}<--`)
-            if (
-              e.target.id === tabIdConstants.home ||
-              e.target.id === tabIdConstants.search
-            ) {
+            if (e.target.id === tabIdConstants.home) {
               changeActiveTabId(e.target.id)
             } else {
               changeActiveTabId(e.target.innerText)
             }
           }
 
+          const navigateToSearchRoute = e => {
+            const {history} = this.props
+            history.push('/search')
+            changeActiveTabId(e.target.id)
+          }
+
           const togglingSearchBarDisplayResult = () => {
             const {isSearchBarActive, searchInput} = this.state
+            // const {match} = this.props
+            // console.log(this.props)
 
             if (isSearchBarActive) {
               return (
@@ -106,7 +112,7 @@ class Header extends Component {
             return (
               <button
                 testid="searchButton"
-                onClick={(this.navigateToSearchRoute, updateActiveTabId)}
+                onClick={navigateToSearchRoute}
                 id="Search"
                 className="search-icon-button"
                 type="button"
