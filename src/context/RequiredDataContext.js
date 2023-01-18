@@ -1,8 +1,9 @@
 import React from 'react'
 
 const RequiredDataContext = React.createContext({
-  activeTabId: 'Home',
-  changeActiveTabId: () => {},
+  accountName: '',
+  accountPassword: '',
+  storeDetails: () => {},
 })
 
 export default RequiredDataContext

@@ -283,7 +283,6 @@
 }
 
 .profile-nav-link-item {
-  margin-left: 30px;
 }
 
 .profile-container {
@@ -291,6 +290,7 @@
   border-radius: 50%;
   height: 48px;
   width: 47px;
+  margin-left: 30px;
 }
 
 @media (max-width: 767px) {

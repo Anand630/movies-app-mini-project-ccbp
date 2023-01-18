@@ -26,8 +26,8 @@
   flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
-  overflow-y: auto;
-  height: 380px;
+  /* overflow-y: auto;
+  height: 380px; */
 
   margin-left: 7.5%;
   margin-right: 7.5%;
@@ -210,26 +210,26 @@
 /* scroll bar styling */
 
 /* width */
-.popular-movies-container::-webkit-scrollbar {
-  width: 8px;
-}
+/* .popular-movies-container::-webkit-scrollbar {
+  width: 8px; 
+}*/
 
 /* Track */
-.popular-movies-container::-webkit-scrollbar-track {
+/* .popular-movies-container::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px lightskyblue;
   border-radius: 10px;
-}
+} */
 
 /* Handle */
-.popular-movies-container::-webkit-scrollbar-thumb {
+/* .popular-movies-container::-webkit-scrollbar-thumb {
   background: #dd0b27;
   border-radius: 10px;
-}
+} */
 
 /* Handle on hover */
-.popular-movies-container::-webkit-scrollbar-thumb:hover {
+/* .popular-movies-container::-webkit-scrollbar-thumb:hover {
   background: #8b0303;
   border: 0.5px solid white;
-}
+} */
 
 /* scroll bar styling */

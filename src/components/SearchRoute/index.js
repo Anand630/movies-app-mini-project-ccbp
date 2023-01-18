@@ -72,7 +72,8 @@ class SearchRoute extends Component {
     } = this.state
     switch (apiStatus) {
       case apiConstants.success:
-        return searchedMoviesList.length === 0 && fetchingDone ? (
+        // && fetchingDone
+        return searchedMoviesList.length === 0 ? (
           <div className="searched-movies-page-loading-or-failure-container">
             <img
               alt="no movies"
@@ -86,13 +87,10 @@ class SearchRoute extends Component {
         ) : (
           <ul className="search-route-bottom-container">
             {searchedMoviesList.map(eachMovie => (
-              <li
-                testid="movieItem"
-                className="searched-movie-image-container"
-                key={eachMovie.id}
-              >
+              <li className="searched-movie-image-container" key={eachMovie.id}>
                 <Link to={`movies/${eachMovie.id}`}>
                   <img
+                    testid="movieItem"
                     className="searched-movie-image"
                     src={eachMovie.posterPath}
                     alt={eachMovie.title}

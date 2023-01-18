@@ -137,9 +137,9 @@ class Home extends Component {
         this.getFormattedMovieData(eachMovie),
       )
       // console.log(formattedOriginalsMoviesList)
-      // const homePageMovie = formattedOriginalsMoviesList[0]
-      const unformattedHomePageMovie = this.getRandomMovie(data.results)
-      const homePageMovie = this.getFormattedMovieData(unformattedHomePageMovie)
+      const homePageMovie = this.getRandomMovie(formattedOriginalsMoviesList)
+      // const unformattedHomePageMovie = this.getRandomMovie(data.results)
+      // const homePageMovie = this.getFormattedMovieData(unformattedHomePageMovie)
       this.setState({
         originalsMoviesList: formattedOriginalsMoviesList,
         homePageMovie,
@@ -157,6 +157,33 @@ class Home extends Component {
     this.getOriginalsMoviesList()
   }
 
+  getMoviesErrorView = () => (
+    <div className="top-container-failure-or-loading-container">
+      <img
+        src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
+        className="warning-icon-bottom"
+        alt="failure view"
+      />
+      <p className="failure-text-bottom">
+        Something went wrong. Please try again
+      </p>
+      <button
+        onClick={this.refetchOriginalsData}
+        type="button"
+        className="try-again-button-bottom"
+      >
+        Try Again
+      </button>
+    </div>
+  )
+
+  getLoadingView = () => (
+    // testid='loader'
+    <div testid="loader" className="top-container-failure-or-loading-container">
+      <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
+    </div>
+  )
+
   getTopContainerView = () => {
     const {homePageMovie, originalsApiStatus} = this.state
     switch (originalsApiStatus) {
@@ -173,35 +200,9 @@ class Home extends Component {
           </div>
         )
       case apiConstants.inProgress:
-        return (
-          // testid='loader'
-          <div
-            testid="loader"
-            className="top-container-failure-or-loading-container"
-          >
-            <Loader type="TailSpin" color="#D81F26" height={50} width={50} />
-          </div>
-        )
+        return this.getLoadingView()
       case apiConstants.failure:
-        return (
-          <div className="top-container-failure-or-loading-container">
-            <img
-              src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
-              className="warning-icon-top"
-              alt="failure view"
-            />
-            <p className="failure-text-top">
-              Something went wrong. Please try again
-            </p>
-            <button
-              onClick={this.refetchOriginalsData}
-              type="button"
-              className="try-again-button-top"
-            >
-              Try Again
-            </button>
-          </div>
-        )
+        return this.getMoviesErrorView()
 
       default:
         return null
@@ -222,35 +223,9 @@ class Home extends Component {
           </div>
         )
       case apiConstants.inProgress:
-        return (
-          // testid='loader'
-          <div
-            testid="loader"
-            className="trending-originals-failure-or-loading-container"
-          >
-            <Loader type="TailSpin" color="#D81F26" height={30} width={30} />
-          </div>
-        )
+        return this.getLoadingView()
       case apiConstants.failure:
-        return (
-          <div className="trending-originals-failure-or-loading-container">
-            <img
-              src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
-              className="warning-icon-bottom"
-              alt="failure view"
-            />
-            <p className="failure-text-bottom">
-              Something went wrong. Please try again
-            </p>
-            <button
-              onClick={this.refetchOriginalsData}
-              type="button"
-              className="try-again-button-bottom"
-            >
-              Try Again
-            </button>
-          </div>
-        )
+        return this.getMoviesErrorView()
 
       default:
         return null
@@ -273,35 +248,9 @@ class Home extends Component {
           </Slider>
         )
       case apiConstants.inProgress:
-        return (
-          // testid='loader'
-          <div
-            testid="loader"
-            className="trending-originals-failure-or-loading-container"
-          >
-            <Loader type="TailSpin" color="#D81F26" height={30} width={30} />
-          </div>
-        )
+        return this.getLoadingView()
       case apiConstants.failure:
-        return (
-          <div className="trending-originals-failure-or-loading-container">
-            <img
-              src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
-              className="warning-icon-bottom"
-              alt="failure view"
-            />
-            <p className="failure-text-bottom">
-              Something went wrong. Please try again
-            </p>
-            <button
-              onClick={this.refetchTrendingMoviesData}
-              type="button"
-              className="try-again-button-bottom"
-            >
-              Try Again
-            </button>
-          </div>
-        )
+        return this.getMoviesErrorView()
       default:
         return null
     }
