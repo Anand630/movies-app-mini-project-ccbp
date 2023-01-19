@@ -139,7 +139,7 @@ class MovieItemDetails extends Component {
 
     const {
       // backdropPath,
-      posterPath,
+      backdropPath,
       overview,
       voteCount,
       voteAverage,
@@ -160,7 +160,7 @@ class MovieItemDetails extends Component {
             <div
               className="movie-item-poster-container"
               style={{
-                backgroundImage: `linear-gradient(90.33deg, #181818 -6.5%, rgba(24, 24, 24, 0.6) 57.15%, rgba(24, 24, 24, 0) 99.77%), url(${posterPath})`,
+                backgroundImage: `linear-gradient(90.33deg, #181818 -6.5%, rgba(24, 24, 24, 0.6) 57.15%, rgba(24, 24, 24, 0) 99.77%), url(${backdropPath})`,
                 backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat',
               }}

@@ -50,7 +50,8 @@ class Header extends Component {
     this.setState({searchInput: e.target.value})
   }
 
-  onSearchBtnClick = () => {
+  onSearchBtnClick = e => {
+    e.preventDefault()
     const {searchInput} = this.state
     const {searchMovies} = this.props
     if (searchInput !== '') {
@@ -65,7 +66,10 @@ class Header extends Component {
 
     if (isSearchBarActive) {
       return (
-        <div className="search-bar-icon-container">
+        <form
+          onSubmit={this.onSearchBtnClick}
+          className="search-bar-icon-container"
+        >
           <input
             onChange={this.onSearchInput}
             value={searchInput}
@@ -76,14 +80,14 @@ class Header extends Component {
           <div className="search-button-container">
             <button
               testid="searchButton"
-              onClick={this.onSearchBtnClick}
+              // onClick={this.onSearchBtnClick}
               className="search-icon-button"
-              type="button"
+              type="submit"
             >
               <HiOutlineSearch className="search-icon-alone" />
             </button>
           </div>
-        </div>
+        </form>
       )
     }
     return (
