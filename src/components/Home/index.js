@@ -157,7 +157,31 @@ class Home extends Component {
     this.getOriginalsMoviesList()
   }
 
-  getMoviesErrorView = () => (
+  refetchTrendingData = () => {
+    this.getTrendingNowMoviesList()
+  }
+
+  getTrendingErrorView = () => (
+    <div className="top-container-failure-or-loading-container">
+      <img
+        src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
+        className="warning-icon-bottom"
+        alt="failure view"
+      />
+      <p className="failure-text-bottom">
+        Something went wrong. Please try again
+      </p>
+      <button
+        onClick={this.refetchTrendingData}
+        type="button"
+        className="try-again-button-bottom"
+      >
+        Try Again
+      </button>
+    </div>
+  )
+
+  getPosterOriginalsErrorView = () => (
     <div className="top-container-failure-or-loading-container">
       <img
         src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1673696599/Netflix%20Clone%20App/Failure%20Views/alert-icon_fjdzey.png"
@@ -202,7 +226,7 @@ class Home extends Component {
       case apiConstants.inProgress:
         return this.getLoadingView()
       case apiConstants.failure:
-        return this.getMoviesErrorView()
+        return this.getPosterOriginalsErrorView()
 
       default:
         return null
@@ -225,15 +249,11 @@ class Home extends Component {
       case apiConstants.inProgress:
         return this.getLoadingView()
       case apiConstants.failure:
-        return this.getMoviesErrorView()
+        return this.getPosterOriginalsErrorView()
 
       default:
         return null
     }
-  }
-
-  refetchTrendingMoviesData = () => {
-    this.getTrendingNowMoviesList()
   }
 
   trendingMoviesView = () => {
@@ -250,7 +270,7 @@ class Home extends Component {
       case apiConstants.inProgress:
         return this.getLoadingView()
       case apiConstants.failure:
-        return this.getMoviesErrorView()
+        return this.getTrendingErrorView()
       default:
         return null
     }

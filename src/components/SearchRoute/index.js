@@ -73,7 +73,7 @@ class SearchRoute extends Component {
     switch (apiStatus) {
       case apiConstants.success:
         // && fetchingDone
-        return searchedMoviesList.length === 0 ? (
+        return searchedMoviesList.length === 0 && fetchingDone ? (
           <div className="searched-movies-page-loading-or-failure-container">
             <img
               alt="no movies"
