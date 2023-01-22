@@ -115,12 +115,6 @@
   width: 22px;
   height: 22px;
 }
-.search-icon-alone:hover {
-  color: #f80000e5;
-
-  width: 22px;
-  height: 24px;
-}
 
 @media (max-width: 575px) {
   .search-icon-alone {
@@ -128,24 +122,12 @@
     width: 20px;
     height: 20px;
   }
-  .search-icon-alone:hover {
-    color: #f80000e5;
-
-    width: 20px;
-    height: 22px;
-  }
 }
 
 @media (max-width: 434px) {
   .search-icon-alone {
     width: 18px;
     height: 18px;
-  }
-  .search-icon-alone:hover {
-    color: #f80000e5;
-
-    width: 18px;
-    height: 20px;
   }
 }
 
@@ -203,6 +185,10 @@
   background-color: #3b3a37;
   padding: 4px 0;
   border-radius: 0 4px 4px 0;
+}
+
+.search-button-container:hover {
+  background: linear-gradient(to right, #c31432, #24023d);
 }
 
 @media (max-width: 575px) {

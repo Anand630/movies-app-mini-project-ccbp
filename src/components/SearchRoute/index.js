@@ -140,7 +140,7 @@ class SearchRoute extends Component {
     // const {searchedMoviesList, fetchingDone, searchedText} = this.state
     return (
       <div className="search-route-page-main-container">
-        <Header {...{viewSearchBar: true, searchMovies: this.searchMovies}} />
+        <Header {...{searchMovies: this.searchMovies}} />
         {this.getSearchResultsView()}
       </div>
     )

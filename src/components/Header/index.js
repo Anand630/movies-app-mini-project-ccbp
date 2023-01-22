@@ -18,16 +18,8 @@ const tabPathConstants = {
 class Header extends Component {
   state = {
     displayHamburgerMenu: false,
-    isSearchBarActive: false,
-    searchInput: '',
-  }
 
-  componentDidMount() {
-    const {viewSearchBar} = this.props
-    if (viewSearchBar) {
-      // console.log(viewSearchBar)
-      this.setState({isSearchBarActive: viewSearchBar})
-    }
+    searchInput: '',
   }
 
   collapseHamburgerMenu = () => {
@@ -60,11 +52,12 @@ class Header extends Component {
   }
 
   togglingSearchBarDisplayResult = () => {
-    const {isSearchBarActive, searchInput} = this.state
-    // const {match} = this.props
-    // console.log(this.props)
+    const {searchInput} = this.state
+    const {match} = this.props
+    const {path} = match
+    console.log(path)
 
-    if (isSearchBarActive) {
+    if (path === tabPathConstants.search) {
       return (
         <form
           onSubmit={this.onSearchBtnClick}
