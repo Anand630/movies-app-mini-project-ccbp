@@ -55,7 +55,6 @@ class Header extends Component {
     const {searchInput} = this.state
     const {match} = this.props
     const {path} = match
-    console.log(path)
 
     if (path === tabPathConstants.search) {
       return (
@@ -87,11 +86,13 @@ class Header extends Component {
       <button
         testid="searchButton"
         onClick={this.navigateToSearchRoute}
-        id="Search"
         className="search-icon-button"
         type="button"
       >
-        <HiOutlineSearch className="search-icon-alone" />
+        <HiOutlineSearch
+          id="searchIcon"
+          className="search-icon-alone search-icon-for-hover"
+        />
       </button>
     )
   }
@@ -127,7 +128,6 @@ class Header extends Component {
         <div className="nav-items-container">
           <Link className="logo-nav-link" to="/">
             <img
-              id="Home"
               className="header-movies-logo"
               src="https://res.cloudinary.com/dlygjzdo7/image/upload/v1672990957/Netflix%20Clone%20App/Login/login_movies_logo_ngzlug.png"
               alt="website logo"

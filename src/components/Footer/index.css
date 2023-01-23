@@ -4,14 +4,8 @@
   align-items: center;
   padding-left: 7.5%;
   padding-right: 7.5%;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 10px;
-}
-
-@media (max-width: 575px) {
-  .footer-container {
-    padding-top: 40px;
-  }
 }
 
 .social-media-icons-container {

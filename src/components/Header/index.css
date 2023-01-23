@@ -87,14 +87,18 @@
   font-weight: 500;
 }
 
-.menu-option:hover {
+/* .menu-option:hover {
   font-weight: 500;
-  /* font-family: 'Open Sans'; */
-}
+  
+} */
 
 .menu-option-nav-link-item {
   text-decoration: none;
   color: #ffffff;
+}
+
+.menu-option-nav-link-item:hover {
+  font-weight: 500;
 }
 
 .search-avatar-container {
@@ -129,6 +133,10 @@
     width: 18px;
     height: 18px;
   }
+}
+
+#searchIcon:hover {
+  color: #ff0015ea;
 }
 
 /*  */
@@ -330,10 +338,10 @@
   /* margin-right: 55px; */
 }
 
-.menu-option-mobile:hover {
+/* .menu-option-mobile:hover {
   font-weight: 500;
-  /* font-family: 'Open Sans'; */
-}
+  
+} */
 
 @media (max-width: 575px) {
   .menu-option-mobile {

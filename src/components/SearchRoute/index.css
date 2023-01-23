@@ -6,13 +6,20 @@
 }
 
 .search-route-bottom-container {
-  margin: 30px 7.5%;
+  margin: 0 7.5%;
   /* flex-grow: 1; */
   padding-left: 0;
   list-style: none;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+
+  overflow-y: auto;
+  height: 80vh;
+  border: 1px solid gray;
+  border-left: none;
+  border-right: none;
+  border-radius: 10px;
 }
 
 @media (max-width: 435px) {
@@ -287,3 +294,29 @@
   }
 }
 */
+
+/* scroll bar styling search-route-bottom-container */
+
+/* width */
+.search-route-bottom-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.search-route-bottom-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px lightskyblue;
+  border-radius: 10px;
+}
+
+/* Handle */
+.search-route-bottom-container::-webkit-scrollbar-thumb {
+  background: rgb(214, 29, 29);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.search-route-bottom-container::-webkit-scrollbar-thumb:hover {
+  border: 0.5px solid gray;
+}
+
+/* scroll bar styling */
