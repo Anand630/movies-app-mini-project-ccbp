@@ -12,6 +12,7 @@
   list-style: none;
   display: flex;
   justify-content: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
 
   overflow-y: auto;
@@ -27,7 +28,7 @@
     margin: 20px 6%;
   }
 }
-
+/* 
 .no-results-found-container {
   flex-grow: 1 !important;
   display: flex;
@@ -35,7 +36,7 @@
   justify-items: center;
   align-items: center;
   padding: 20px 8px;
-}
+} */
 
 .no-movies-found-image {
   width: 450px;

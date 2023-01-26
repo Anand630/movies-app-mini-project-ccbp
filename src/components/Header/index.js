@@ -38,10 +38,6 @@ class Header extends Component {
     history.push('/search')
   }
 
-  onSearchInput = e => {
-    this.setState({searchInput: e.target.value})
-  }
-
   onSearchBtnClick = e => {
     e.preventDefault()
     const {searchInput} = this.state
@@ -49,6 +45,19 @@ class Header extends Component {
     if (searchInput !== '') {
       searchMovies(searchInput)
     }
+  }
+
+  onSearching = () => {
+    // e.preventDefault()
+    const {searchInput} = this.state
+    const {searchMovies} = this.props
+    if (searchInput !== '') {
+      searchMovies(searchInput)
+    }
+  }
+
+  onSearchInput = e => {
+    this.setState({searchInput: e.target.value}, this.onSearching)
   }
 
   togglingSearchBarDisplayResult = () => {
