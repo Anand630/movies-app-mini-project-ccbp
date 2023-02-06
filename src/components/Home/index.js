@@ -6,6 +6,8 @@ import Cookies from 'js-cookie'
 // import {TiWarning} from 'react-icons/ti'
 import Header from '../Header'
 import MovieItem from '../MovieItem'
+import RecentMovieItem from '../RecentMovieItem'
+
 import Footer from '../Footer'
 
 import './index.css'
@@ -285,6 +287,12 @@ class Home extends Component {
 
     // console.log(homePageMovie)
 
+    // recentMovies extraction from localStorage
+
+    const recentMoviesString = localStorage.getItem('recentMovies')
+    const recentMovies = JSON.parse(recentMoviesString)
+    console.log(recentMovies)
+
     const ImageUrl = dataFetched ? `url(${homePageMovie.backdropPath})` : ''
 
     const bgOrLinearGrad = dataFetched
@@ -319,6 +327,19 @@ class Home extends Component {
 
             {this.originalsView()}
           </div>
+          {recentMovies !== null && (
+            <div className="recent-movies-container">
+              <h1 className="recent-movies-heading">Recent Movies</h1>
+              <ul className="all-recent-movies-container">
+                {recentMovies.map(eachMovie => (
+                  <RecentMovieItem
+                    movieDetails={eachMovie}
+                    key={eachMovie.id}
+                  />
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
         <Footer />
       </div>

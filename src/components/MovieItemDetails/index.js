@@ -74,12 +74,66 @@ class MovieItemDetails extends Component {
 
     // console.log(data)
     // movieDetails
+
+    //  for finding duplicates
+
+    const findMoviePresentOrNot = (moviesArray, movieId) => {
+      const result = moviesArray.findIndex(
+        eachMovie => eachMovie.id === movieId,
+      )
+      if (result === -1) {
+        return true
+      }
+      return false
+    }
+
     if (response.ok) {
       const data = await response.json()
       const formattedMovieDetails = this.getFormattedMovieDetails(
         data.movie_details,
       )
       // console.log(formattedMovieDetails)
+      // recentMovies
+      let recentMovies = localStorage.getItem('recentMovies')
+      if (recentMovies !== null) {
+        recentMovies = JSON.parse(recentMovies)
+        if (recentMovies.length === 3) {
+          recentMovies.pop()
+        }
+      }
+      console.log(recentMovies)
+      let recentMoviesArray
+      if (recentMovies === null) {
+        recentMoviesArray = [
+          {
+            moviePoster: formattedMovieDetails.backdropPath,
+            id: formattedMovieDetails.id,
+          },
+        ]
+      } else if (recentMovies.length === 0) {
+        recentMoviesArray = [
+          {
+            moviePoster: formattedMovieDetails.backdropPath,
+            id: formattedMovieDetails.id,
+          },
+        ]
+      } else if (
+        findMoviePresentOrNot(recentMovies, formattedMovieDetails.id)
+      ) {
+        recentMoviesArray = [
+          {
+            moviePoster: formattedMovieDetails.backdropPath,
+            id: formattedMovieDetails.id,
+          },
+          ...recentMovies,
+        ]
+      }
+
+      if (recentMoviesArray !== undefined) {
+        const dataToBeStored = JSON.stringify(recentMoviesArray)
+        localStorage.setItem('recentMovies', dataToBeStored)
+      }
+
       // similar movie details
       const formattedSimilarMoviesList = data.movie_details.similar_movies.map(
         eachMovie => this.getFormattedSimilarMovie(eachMovie),

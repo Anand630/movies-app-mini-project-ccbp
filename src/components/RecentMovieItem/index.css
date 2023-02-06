@@ -1,0 +1,116 @@
+.recent-movie-image {
+  border-radius: 8px;
+  width: 200px;
+  height: 150px;
+  border: 1px solid white;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 1124px) {
+  .recent-movie-image {
+    border-radius: 12px;
+    width: 180px;
+    height: 140px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .recent-movie-image {
+    width: 180px;
+    height: 130px;
+    margin-right: 15px;
+  }
+}
+
+/*  */
+@media (max-width: 767px) {
+  .recent-movie-image {
+    width: 190px;
+    height: 130px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 743px) {
+  .recent-movie-image {
+    width: 180px;
+    height: 125px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 708px) {
+  .recent-movie-image {
+    width: 150px;
+    height: 100px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 607px) {
+  .recent-movie-image {
+    width: 135px;
+    /* height: 100px; */
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .recent-movie-image {
+    width: 120px;
+    height: 100px;
+    margin-right: 15px;
+  }
+}
+
+/* @media (max-width: 544px) {
+  .recent-movie-image {
+    width: 180px;
+    height: 120px;
+    margin-right: 15px;
+  }
+} */
+
+@media (max-width: 524px) {
+  .recent-movie-image {
+    width: 110px;
+    height: 100px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 491px) {
+  .recent-movie-image {
+    width: 155px;
+    height: 98px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 441px) {
+  .recent-movie-image {
+    width: 140px;
+    height: 90px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 393px) {
+  .recent-movie-image {
+    width: 125px;
+    height: 90px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 355px) {
+  .recent-movie-image {
+    width: 110px;
+    height: 90px;
+    margin-right: 10px;
+  }
+}
+
+/*  */
